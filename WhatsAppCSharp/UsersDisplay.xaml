@@ -1,0 +1,38 @@
+﻿ <Page xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps" 
+    x:Class="WhatsAppCSharp.UsersDisplay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WhatsAppCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+  
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Pivot x:Name="inside">
+        <PivotItem Header="Friends" TabIndex="0" Margin="10,0,28,22.5" >
+            <ListBox x:Name="UserList" Margin="41,10,31.667,22" Foreground="White" Background="#CC000000" Width="289" RenderTransformOrigin="0.496,0.49" FontSize="18" FontFamily="DFKai-SB" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem Content="{Binding full_name}" Tag="{Binding email_id}" Tapped="GoToUserChat">
+
+                        </ListBoxItem>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </PivotItem>
+        <PivotItem Header="Location" Margin="19,92,19,-0.5" >
+            <StackPanel Margin="0,-82,-0.333,-0.167">
+                <Button x:Name="Set_Location" Content="Set Location" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="35" Margin="0,0,-0.333,0" Click="Set_Location_Click"/>
+                <Maps:MapControl x:Name="myMap" MapServiceToken="ZyVH5r_InkgmMCfrbibBFw" Loaded="myMap_Loaded" Height="424" Margin="0,0,-0.333,0"/>
+                <Button x:Name="zoomout" Content="Zoom Out " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="zoomout_Click"/>
+            </StackPanel>
+        </PivotItem>
+        <PivotItem Header="LogOut" Margin="19,92,19,-0.5">
+            <StackPanel Margin="0,-82,-0.333,-0.167">
+                <Button x:Name="logout" Content =" Log Out " Margin="0,50,-0.333,201.833" Width="362" Click="logout_Click"/>
+            </StackPanel>
+        </PivotItem>
+    </Pivot>
+</Page>

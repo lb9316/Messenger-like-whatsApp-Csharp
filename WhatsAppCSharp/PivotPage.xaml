@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="WhatsAppCSharp.PivotPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WhatsAppCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:WhatsAppCSharp.Data"
+    mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Pivot x:Name="PivotMain" Title="WhatsApp" Margin="0,0,0,-27">
+        <PivotItem Header="Login" Margin="19,23,19,47">
+            <StackPanel>
+                <TextBlock FontSize="32" Text="Email ID" Margin="0,0,175.667,0" Width="360" Height="63"/>
+                <TextBox x:Name="getEmail"  Height="48" Margin="0,0,-0.333,0" Background="Gray" BorderBrush="Gray"/>
+                <TextBlock FontSize="32" Text="Password" Height="64" Margin="0,0,-0.333,0"/>
+                <PasswordBox x:Name="getPassword" Margin="0,9.5,-0.333,9.5" Height="54" Background="Gray" BorderBrush="Gray"/>
+
+                <Button x:Name="login_button" Content="LogIn" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="loginClick" Height="76"/>
+            </StackPanel>
+        </PivotItem>
+
+        <PivotItem Header="Sign Up" Margin="19,23,19,47">
+            <StackPanel>
+                <TextBlock FontSize="32" Text="First Name" Margin="0,0,175.667,0" Width="360"/>
+                <TextBox x:Name="SignUpFirstName" Tag="username" Height="50" Margin="0,0,-0.333,0" Background="Gray" BorderBrush="Gray"/>
+                <TextBlock FontSize="32" Text="Last Name" Margin="0,0,175.667,0" Width="360"/>
+                <TextBox x:Name="SignUpLastName" Tag="lastname" Height="50" Margin="0,0,-0.333,0" BorderBrush="Gray" Background="Gray"/>
+                <TextBlock FontSize="32" Text="Email ID" Margin="0,0,175.667,0" Width="360"/>
+                <TextBox x:Name="SignupEmail" Tag="email_id" Height="50" Margin="0,0,-0.333,0" Background="Gray" BorderBrush="Gray"/>
+                <TextBlock FontSize="32" Text="Password" Height="40" Margin="0,0,-0.333,0"/>
+                <PasswordBox x:Name="SignupPassword" Tag ="register_pw" Margin="0,9.5,-0.333,9.5" Height="50" Background="Gray" BorderBrush="Gray" />
+                
+                <Button x:Name="buttonSignUp" Content="Sign_Up" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="buttonSignUp_Click" Height="76"/>
+            </StackPanel>
+        </PivotItem>
+        <PivotItem Header="Delete" Margin="19,23,19,47">
+            <StackPanel>
+                <TextBlock FontSize="32" Text="Email ID" Margin="0,0,175.667,0" Width="360" Height="63"/>
+                <TextBox x:Name="getDeleteEmail"  Height="50" Margin="0,0,-0.333,0" Background="Gray" BorderBrush="Gray"/>
+                <TextBlock FontSize="32" Text="Password" Height="65" Margin="0,0,-0.333,0"/>
+                <PasswordBox x:Name="getDeletePassword" Margin="0,9.5,-0.333,9.5" Height="50" Background="Gray" BorderBrush="Gray"/>
+                
+                <Button x:Name="Delete_button"  Content="Delete" HorizontalAlignment="Stretch"  Click="DeleteClick" VerticalAlignment="Stretch" Height="85"/>
+            </StackPanel>
+        </PivotItem>
+    </Pivot>
+</Page>
+
